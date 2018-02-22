@@ -3,7 +3,7 @@
         <v-flex xs6 offset-xs3>
             <div class="white elevation-2">
                 <v-toolbar class="cyan" flat dense dark>
-                    <v-toolbar-title>注册</v-toolbar-title>
+                    <v-toolbar-title>登录</v-toolbar-title>
                 </v-toolbar>
                 <div class="pl-4 pr-4 pt-2 pb-2">
 
@@ -22,8 +22,8 @@
                     <v-btn
                        dark
                        class="cyan"
-                       @click="register"
-                       >注册</v-btn>
+                       @click="login"
+                       >登录</v-btn>
                 </div>
             </div>
         </v-flex>
@@ -41,9 +41,9 @@
             }
         },
         methods: {
-            async register() {
+            async login() {
                 try {
-                    const response = await AuthenticationService.register({
+                    const response = await AuthenticationService.login({
                         email: this.email,
                         password: this.password
                     });
