@@ -12,7 +12,7 @@ const sequelize = new Sequelize(
 );
 
 fs.readdirSync(__dirname)
-  .filter(file=> file !== 'index.js')
+  .filter(file=> file !== 'index.js' && !(new RegExp('.*swp$').test(file)))
   .forEach(file=> {
     const model = sequelize.import(path.join(__dirname, file))
     db[model.name] = model
